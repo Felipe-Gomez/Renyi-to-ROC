@@ -77,7 +77,7 @@ installation will raise an error.
 
 ``` python
 import numpy as np
-from rdp_to_roc import get_FNR
+from renyi_to_roc import get_FNR
 alpha = 2
 rho = 1.1
 x_array = np.linspace(0,1,20)
@@ -100,7 +100,7 @@ x = np.linspace(0,1,1_000)
 y = np.zeros_like(x)
 
 for alpha, rho in zip(alphas, rhos):
-    y = np.maximum(get_y(x, alpha, rho, tol), y)
+    y = np.maximum(get_FNR(x, alpha, rho, tol), y)
 ```
 ## References
 
