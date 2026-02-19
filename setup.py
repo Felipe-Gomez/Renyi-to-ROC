@@ -60,7 +60,7 @@ def get_extensions():
         return []
 
     ext = Extension(
-        name="renyi_to_roc._converter",
+        name="renyi_to_roc.cython_converter",
         sources=["src/renyi_to_roc/cython_converter.pyx"],
         include_dirs=[np.get_include()],
     )
