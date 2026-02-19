@@ -38,7 +38,7 @@ class OptionalBuildExt(build_ext):
         except Exception as e:
             if REQUIRE_COMPILE:
                 raise
-            print(f"Renyi-to-ROC: WARNING: Cython compilation failed; using pure Python: {{ext.name}")
+            print(f"Renyi-to-ROC: WARNING: Cython compilation failed; using pure Python: {ext.name}")
             print(f"  {e}")
 
 
