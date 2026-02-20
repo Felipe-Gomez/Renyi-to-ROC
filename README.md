@@ -89,18 +89,22 @@ every element in ```fnr_array``` is computed to 7 digits of accuracy.
 
 If an RDP profile $\rho(\alpha)$ is desired, then we recommend calling 
 this function over a grid of orders alpha then taking the maximum to
-get the resulting tradeoff curve. To get the tradeoff curve for $\rho$-zCDP:
+get the resulting tradeoff curve. 
+
+As an example, we investigate the tradeoff curve 
+for $\rho$-zCDP. Since $\rho$-zCDP is defined only for orders $\alpha>1$, 
+we construct our grid of alphas to this regime:
 
 ```python
-alphas = np.linspace(0.5, 10, 100)
+alphas = np.linspace(1, 10, 100) # explicitly omit alpha < 1
 rho_zcdp = 1.1
 rhos = rho_zcdp * alphas
-tol = 1e-8
-x = np.linspace(0,1,1_000)
-y = np.zeros_like(x)
+tol = 1e-7
+x_array = np.linspace(0,1,1_000)
+fnr_array = np.zeros_like(x)
 
 for alpha, rho in zip(alphas, rhos):
-    y = np.maximum(get_FNR(x, alpha, rho, tol), y)
+    fnr_array = np.maximum(get_FNR(x_array, alpha = alpha, rho = rho, tol = tol), fnr_array)
 ```
 ## References
 
