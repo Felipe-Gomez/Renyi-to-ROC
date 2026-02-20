@@ -87,8 +87,8 @@ An optional ```tol``` parameter is allowed, which sets the tolerance
 for computing ```fnr_array```. Default is ```1e-7```, which means 
 every element in ```fnr_array``` is computed to 7 digits of accuracy. 
 
-If an RDP profile $\rho(\alpha)$ is desired, then we recommend calling 
-this function over a grid of orders alpha then taking the maximum to
+If an RDP profile $\rho(\alpha)$ is known, then we recommend calling 
+this ```get_FNR``` over a grid of orders alpha then taking the maximum to
 get the resulting tradeoff curve. 
 
 As an example, we investigate the tradeoff curve 
